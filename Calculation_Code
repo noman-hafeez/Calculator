@@ -1,0 +1,33 @@
+const calculation = (num1:number, num2:number, operator:string) => {
+
+if (operator == "Multiply"){
+let result = num1 * num2;
+return result;
+}
+else if (operator == "Plus"){
+    let result = num1 + num2;
+return result;
+}
+else if (operator == "Minus"){
+    let result = num1 - num2;
+return result;
+}
+else if (operator == "Divide"){
+    let result = num1 / num2;
+return result;
+}
+else if (operator == "Modulus"){
+    let result = num1 % num2;
+return result;
+}
+else if (operator == "Increment"){
+    let result = ++num1;
+return result;
+}
+else if (operator == "Decrement"){
+    let result = --num1;
+return result;
+}
+};
+
+export {calculation};
