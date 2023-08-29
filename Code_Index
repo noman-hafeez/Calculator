@@ -1,0 +1,43 @@
+import {calculation} from "./calculation.js"
+import inquirer from "inquirer";
+do{
+const answer = await inquirer.prompt([
+{
+    type: 'number',
+    name:'num1',
+    message:'Ente First Number',
+},
+{
+    name:'num2',
+    message:'Enter 2nd Number OR "0" for Skip',
+    type:'number',
+},
+{
+    name:'operator',
+    message: 'Please select Operator',
+    type:'list',
+    choices:["Divide","Multiply","Plus","Minus", "Modulus","Increment","Decrement","Exponentiation"],
+}
+
+]);
+
+if (answer.num2 == 0){
+    const result = "Your desire Operation Result is " + calculation(answer.num1,answer.num2,answer.operator);    
+    console.log(result);
+}
+else{
+const result = "Your desire Operation Result is " + calculation(answer.num1,answer.num2,answer.operator);
+//console.log(answer.operator);
+console.log(result);
+}
+var back = await inquirer.prompt([
+    {
+        name: 'cont',
+        type:'list',
+        message:'Do you want to continue',
+        choices:["Yes","No"]
+    }
+
+]);
+
+}while (back.cont == "Yes");
